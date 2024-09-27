@@ -1,7 +1,10 @@
 " -----------------------------------------------------------------------------
 "  GLOBALS
 " -----------------------------------------------------------------------------
+let g:netrw_altv = 1
 let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_list_hide = netrw_gitignore#Hide()
 let g:netrw_keepdir = 0
 
 " -----------------------------------------------------------------------------
@@ -42,6 +45,7 @@ if has("win32") || has("win64")
     set shell=pwsh
 endif
 
+
 " -----------------------------------------------------------------------------
 "  KEYBINDS
 " -----------------------------------------------------------------------------
@@ -53,6 +57,8 @@ let mapleader = " "
 nnoremap <leader>w :wa<CR>
 " Open Explorer
 nnoremap <leader>e :e .<CR>
+" Remove highlighting
+nnoremap <Esc> :nohlsearch<CR>
 " Move line up
 nnoremap <silent> <A-k> :m .-2<CR>== 
 " Move line down
@@ -67,6 +73,13 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 " Move selected lines down
 vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 
+" Help Pages
+"
+" Completion keymaps
+nnoremap <leader>hc :h ins-completion<CR>
+" Netrw keymaps
+nnoremap <leader>hn :h netrw-browse-map<CR>
+
 
 " -----------------------------------------------------------------------------
 "  TAGS
@@ -80,3 +93,11 @@ vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 " Call ":MakeTags" inside repo
 command! MakeTags !ctags -R .
 
+" -----------------------------------------------------------------------------
+"  USER INTERFACE
+" -----------------------------------------------------------------------------
+colorscheme wildcharm
+set background=light
+set textwidth=120
+set colorcolumn=121
+set guifont=M+1Code\ Nerd\ Font\ Mono:h14
