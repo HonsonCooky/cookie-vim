@@ -9,40 +9,92 @@ let g:netrw_keepdir = 0
 " -----------------------------------------------------------------------------
 "  OPTIONS
 " -----------------------------------------------------------------------------
-set nocompatible " Disable compatibility with vi
 
-filetype on " Enable type file detection.
-filetype plugin on " Enable plugins and load plugin for the detected file type.
-filetype indent on " Load an indent file for the detected file type.
-syntax on " Turn syntax highlighting on.
+" General Settings
+"
+" Disable Vi compatibility mode for better Vim features
+set nocompatible
+" Use the system clipboard for all yank, delete, change, and put operations
+set clipboard=unnamed
+" Disable all bells and beeps
+set belloff=all
+" Enable 24-bit RGB color in the TUI
+set termguicolors
 
-set number " Show line numbers.
-set relativenumber " Make Line numbers relative
 
-set backspace=3 " Backspace weird behaviour
-set belloff=all " Silence that annoying bell
-set clipboard=unnamed " Set clipboard to use OS clipboard
-set expandtab " Use space characters instead of tabs.
-set ignorecase " Ignore case when searching.
-set incsearch " Enable incremental search.
-set hlsearch " Highlight matching search patterns.
-set laststatus=2 " Show Last Status Line Always 
-set path+=** " Allow ':find' to search through CWD
-set shiftwidth=2 " Set shift width
-set showcmd " Show partial command in the last line of the screen.
-set showmode " Show the mode you are in on the last line.
-set smartcase " Override ignorecase if search pattern contains uppercase letters.
-set splitbelow " Ensure horizontal splits are below the current buffer
-set tabstop=2 " Set tab width
-set termguicolors " Enable true gui colors
-set wildmenu " Show tab completion menu in vim commandline
+" File Type and Syntax
+"
+" Enable file type detection
+filetype on
+" Enable file type-specific plugins
+filetype plugin on
+" Enable file type-specific indentation
+filetype indent on
+" Enable syntax highlighting
+syntax on
 
+
+" Display Settings
+"
+" Show line numbers
+set number       
+" Show relative line numbers
+set relativenumber
+" Always display the status line
+set laststatus=2
+" Show (partial) command in the last line of the screen
+set showcmd
+" Show the current mode in the status line
+set showmode              
+" Customize the status line
 set statusline=\ \ %F\ \|\ \ %n\ %=%Y\ \|\ \ %{&ff}\ \|\ \ %l,%v\ \ 
 
-" Enable powershell for inbuilt terminal
+
+" Search Settings
+"
+" Ignore case in search patterns
+set ignorecase
+" Show search matches as you type
+set incsearch
+" Highlight search matches
+set hlsearch
+" Override 'ignorecase' if the search pattern contains uppercase letters
+set smartcase
+
+
+" Indentation and Tabs
+"
+" Convert tabs to spaces
+set expandtab
+" Number of spaces to use for each step of (auto)indent
+set shiftwidth=2
+" Number of spaces that a <Tab> in the file counts for
+set tabstop=2
+
+
+" Splits and Windows
+"
+" Open vertical splits to the right
+set splitright
+" Open horizontal splits below
+set splitbelow
+
+
+" Path and Shell
+"
+" Search for files in subdirectories
+set path+=**
+" Use PowerShell as the default shell on Windows
 if has("win32") || has("win64")
   set shell=pwsh
 endif
+
+
+" Allow backspacing over everything in insert mode
+set backspace=3
+
+" Enable command-line completion mode
+set wildmenu
 
 
 " -----------------------------------------------------------------------------
@@ -99,8 +151,6 @@ command! MakeTags !ctags -R .
 " -----------------------------------------------------------------------------
 "  USER INTERFACE
 " -----------------------------------------------------------------------------
-set background=light
 set textwidth=80
 set colorcolumn=81
-
 so $MYVIMDIR/catppuccin_mocha.vim
