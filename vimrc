@@ -4,7 +4,6 @@
 let g:netrw_altv = 1
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_list_hide = netrw_gitignore#Hide()
 let g:netrw_keepdir = 0
 
 " -----------------------------------------------------------------------------
@@ -42,7 +41,7 @@ set statusline=\ \ %F\ \|\ \ %n\ %=%Y\ \|\ \ %{&ff}\ \|\ \ %l,%v\ \
 
 " Enable powershell for inbuilt terminal
 if has("win32") || has("win64")
-    set shell=pwsh
+  set shell=pwsh
 endif
 
 
@@ -64,7 +63,11 @@ nnoremap <silent> <A-k> :m .-2<CR>==
 " Move line down
 nnoremap <silent> <A-j> :m .+1<CR>== 
 " Open Terminal
-nnoremap <silent> <leader>t :term++rows=10<CR>
+nnoremap <silent> <leader>`b :term++rows=10<CR>
+nnoremap <silent> <leader>`t :tab ter<CR>
+" Change Themes
+nnoremap <leader>tl :so catppuccin_latte.vim<CR>
+nnoremap <leader>td :so catppuccin_mocha.vim<CR>
 
 " Visual Mode
 "
@@ -98,3 +101,6 @@ command! MakeTags !ctags -R .
 " -----------------------------------------------------------------------------
 set background=light
 set textwidth=80
+set colorcolumn=81
+
+so catppuccin_mocha.vim

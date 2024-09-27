@@ -2,3 +2,5 @@
 
 !.gitignore
 !vimrc
+!catppuccin_latte.vim
+!catppuccin_mocha.vim
