@@ -29,12 +29,12 @@ set incsearch " Enable incremental search.
 set hlsearch " Highlight matching search patterns.
 set laststatus=2 " Show Last Status Line Always 
 set path+=** " Allow ':find' to search through CWD
-set shiftwidth=4 " Set shift width to 4 spaces.
+set shiftwidth=2 " Set shift width
 set showcmd " Show partial command in the last line of the screen.
 set showmode " Show the mode you are in on the last line.
 set smartcase " Override ignorecase if search pattern contains uppercase letters.
 set splitbelow " Ensure horizontal splits are below the current buffer
-set tabstop=4 " Set tab width to 4 columns.
+set tabstop=2 " Set tab width
 set termguicolors " Enable true gui colors
 set wildmenu " Show tab completion menu in vim commandline
 
@@ -96,8 +96,5 @@ command! MakeTags !ctags -R .
 " -----------------------------------------------------------------------------
 "  USER INTERFACE
 " -----------------------------------------------------------------------------
-colorscheme wildcharm
 set background=light
-set textwidth=120
-set colorcolumn=121
-set guifont=M+1Code\ Nerd\ Font\ Mono:h14
+set textwidth=80
