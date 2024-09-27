@@ -66,8 +66,8 @@ nnoremap <silent> <A-j> :m .+1<CR>==
 nnoremap <silent> <leader>`b :term++rows=10<CR>
 nnoremap <silent> <leader>`t :tab ter<CR>
 " Change Themes
-nnoremap <leader>tl :so catppuccin_latte.vim<CR>
-nnoremap <leader>td :so catppuccin_mocha.vim<CR>
+nnoremap <leader>tl :so $MYVIMDIR/catppuccin_latte.vim<CR>
+nnoremap <leader>td :so $MYVIMDIR/catppuccin_mocha.vim<CR>
 
 " Visual Mode
 "
@@ -103,4 +103,4 @@ set background=light
 set textwidth=80
 set colorcolumn=81
 
-so catppuccin_mocha.vim
+so $MYVIMDIR/catppuccin_mocha.vim
