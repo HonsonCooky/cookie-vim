@@ -32,6 +32,8 @@ filetype plugin on
 filetype indent on
 " Enable syntax highlighting
 syntax on
+" Set Omnifunc Autocomplete based on filetype
+set omnifunc=syntaxcomplete#Complete
 
 
 " Display Settings
