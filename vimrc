@@ -20,6 +20,8 @@ set clipboard=unnamed
 set belloff=all
 " Enable 24-bit RGB color in the TUI
 set termguicolors
+" Disable wrapping text
+set nowrap
 
 
 " File Type and Syntax
