@@ -159,28 +159,3 @@ set textwidth=80
 set colorcolumn=81
 so $MYVIMDIR/catppuccin_mocha.vim
 
-
-" -----------------------------------------------------------------------------
-"  BUILD SYSTEMS
-" -----------------------------------------------------------------------------
-" Generic function to run a build command and capture output
-function! BuildCommand(cmd)
-  silent! lclose
-  let l:output = system(a:cmd)
-  if v:shell_error
-    cgetexpr l:output
-    lopen
-  else
-    echo "Build successful!"
-  endif
-endfunction
-
-" Autocmd for TypeScript and JavaScript files
-autocmd BufWritePost *.ts call BuildCommand('tsc && eslint .')
-
-" Autocmd for Zig files
-autocmd BufWritePost *.zig call BuildCommand('zig build')
-
-" Autocmd for C# files
-autocmd BufWritePost *.cs call BuildCommand('dotnet build')
-
