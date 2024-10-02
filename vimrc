@@ -15,7 +15,7 @@ let g:netrw_keepdir = 0
 " Disable Vi compatibility mode for better Vim features
 set nocompatible
 " Use the system clipboard for all yank, delete, change, and put operations
-set clipboard=unnamed
+set clipboard=unnamedplus
 " Disable all bells and beeps
 set belloff=all
 " Enable 24-bit RGB color in the TUI
