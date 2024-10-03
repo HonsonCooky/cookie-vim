@@ -6,6 +6,14 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_keepdir = 0
 
+
+" -----------------------------------------------------------------------------
+"  PLUGINS - As Little As Possible
+" -----------------------------------------------------------------------------
+call plug#begin()
+Plug 'sheerun/vim-polyglot'
+call plug#end()
+
 " -----------------------------------------------------------------------------
 "  OPTIONS
 " -----------------------------------------------------------------------------
@@ -31,9 +39,9 @@ filetype on
 " Enable file type-specific plugins
 filetype plugin on
 " Enable file type-specific indentation
-filetype indent on
+" filetype indent on " Done with vim-plug
 " Enable syntax highlighting
-syntax on
+" syntax on " Done with vim-plug
 " Set Omnifunc Autocomplete based on filetype
 set omnifunc=syntaxcomplete#Complete
 
@@ -120,11 +128,8 @@ nnoremap <silent> <A-k> :m .-2<CR>==
 " Move line down
 nnoremap <silent> <A-j> :m .+1<CR>== 
 " Open Terminal
-nnoremap <silent> <leader>`b :term++rows=10<CR>
-nnoremap <silent> <leader>`t :tab ter<CR>
-" Change Themes
-nnoremap <leader>tl :so $MYVIMDIR/catppuccin_latte.vim<CR>
-nnoremap <leader>td :so $MYVIMDIR/catppuccin_mocha.vim<CR>
+nnoremap <silent> <leader>tb :term++rows=10<CR>
+nnoremap <silent> <leader>tt :tab ter<CR>
 
 " Visual Mode
 "
@@ -156,6 +161,6 @@ command! MakeTags !ctags -R .
 " -----------------------------------------------------------------------------
 "  USER INTERFACE
 " -----------------------------------------------------------------------------
-set textwidth=120
-so $MYVIMDIR/catppuccin_mocha.vim
-
+set textwidth=80
+set background=dark
+colorscheme habamax
