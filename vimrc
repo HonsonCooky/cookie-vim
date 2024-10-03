@@ -6,14 +6,6 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_keepdir = 0
 
-
-" -----------------------------------------------------------------------------
-"  PLUGINS - As Little As Possible
-" -----------------------------------------------------------------------------
-call plug#begin()
-Plug 'sheerun/vim-polyglot'
-call plug#end()
-
 " -----------------------------------------------------------------------------
 "  OPTIONS
 " -----------------------------------------------------------------------------
@@ -39,9 +31,9 @@ filetype on
 " Enable file type-specific plugins
 filetype plugin on
 " Enable file type-specific indentation
-" filetype indent on " Done with vim-plug
+filetype indent on
 " Enable syntax highlighting
-" syntax on " Done with vim-plug
+syntax on
 " Set Omnifunc Autocomplete based on filetype
 set omnifunc=syntaxcomplete#Complete
 
@@ -157,6 +149,13 @@ nnoremap <leader>hn :h netrw-browse-map<CR>
 "
 " Call ":MakeTags" inside repo
 command! MakeTags !ctags -R .
+
+" -----------------------------------------------------------------------------
+"  PLUGINS - As Little As Possible
+" -----------------------------------------------------------------------------
+call plug#begin()
+Plug 'sheerun/vim-polyglot'
+call plug#end()
 
 " -----------------------------------------------------------------------------
 "  USER INTERFACE
