@@ -90,6 +90,7 @@ set splitbelow
 set path+=**
 " Use PowerShell as the default shell on Windows
 if has("win32") || has("win64")
+  set clipboard=unnamed
   set shell=pwsh
 endif
 
@@ -155,7 +156,6 @@ command! MakeTags !ctags -R .
 " -----------------------------------------------------------------------------
 "  USER INTERFACE
 " -----------------------------------------------------------------------------
-set textwidth=80
-set colorcolumn=81
+set textwidth=120
 so $MYVIMDIR/catppuccin_mocha.vim
 
