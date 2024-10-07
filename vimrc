@@ -5,6 +5,7 @@ let g:netrw_altv = 1
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_keepdir = 0
+let g:polyglot_disabled = ['autoindent', 'sensible']
 
 " -----------------------------------------------------------------------------
 "  OPTIONS
@@ -22,6 +23,8 @@ set belloff=all
 set termguicolors
 " Disable wrapping text
 set nowrap
+" Enable folds
+set foldmethod=indent
 
 
 " File Type and Syntax
@@ -154,12 +157,10 @@ command! MakeTags !ctags -R .
 "  PLUGINS - As Little As Possible
 " -----------------------------------------------------------------------------
 call plug#begin()
-Plug 'sheerun/vim-polyglot'
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " -----------------------------------------------------------------------------
 "  USER INTERFACE
 " -----------------------------------------------------------------------------
 set textwidth=80
-set background=dark
-colorscheme habamax
