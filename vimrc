@@ -24,7 +24,7 @@ set termguicolors
 " Disable wrapping text
 set nowrap
 " Enable folds
-set foldmethod=indent
+set foldmethod=manual
 
 
 " File Type and Syntax
